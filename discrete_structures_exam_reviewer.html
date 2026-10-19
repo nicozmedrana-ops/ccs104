@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discrete Structures 1 — Exam Reviewer</title>
+<style>
+:root{--bg:#f4f7fb;--panel:#fff;--ink:#182338;--muted:#65738a;--line:#dce4ef;--blue:#315ee8;--blue2:#eaf0ff;--green:#16845b;--red:#c33e4b;--shadow:0 10px 28px rgba(25,43,78,.08)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:linear-gradient(120deg,#172554,#315ee8);color:#fff;padding:28px clamp(18px,4vw,52px)}header h1{margin:0;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.2}header p{margin:8px 0 0;color:#dce6ff}.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:22px;max-width:1400px;margin:auto;padding:22px}
+nav{position:sticky;top:14px;align-self:start;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow);max-height:calc(100vh - 28px);overflow:auto}
+.navlabel{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:800;margin:8px 10px}
+nav button{display:block;width:100%;text-align:left;background:transparent;border:0;padding:10px 12px;border-radius:10px;color:var(--ink);font:inherit;cursor:pointer;margin:2px 0}
+nav button:hover,nav button.active{background:var(--blue2);color:var(--blue);font-weight:700}
+main{min-width:0}.page{display:none}.page.active{display:block}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:clamp(18px,3vw,30px);margin-bottom:18px;box-shadow:var(--shadow)}
+h2{margin:0 0 12px;font-size:1.65rem;line-height:1.25}h3{margin:24px 0 8px;font-size:1.15rem}p{margin:8px 0 14px}.lead{font-size:1.08rem;color:#35435b}.tag{display:inline-block;background:var(--blue2);color:var(--blue);font-size:.8rem;font-weight:800;padding:4px 9px;border-radius:999px;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.mini{padding:16px;border:1px solid var(--line);border-radius:12px;background:#fbfcff}.mini strong{display:block;margin-bottom:5px}.callout{border-left:4px solid var(--blue);background:#f0f4ff;padding:12px 15px;border-radius:0 10px 10px 0;margin:14px 0}.warning{border-left-color:#d48a16;background:#fff8e8}
+table{width:100%;border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{background:#f0f4fa}
+code,.formula{background:#edf1f7;border-radius:6px;padding:2px 6px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.tree{font:700 1.15rem/1.8 ui-monospace,monospace;white-space:pre;overflow:auto;background:#101a2e;color:#e7edff;padding:18px;border-radius:12px}
+button.primary,.btn{border:0;background:var(--blue);color:#fff;border-radius:10px;padding:10px 16px;font:inherit;font-weight:700;cursor:pointer}.secondary{background:#e9eef7!important;color:var(--ink)!important}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.question{border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}.question p{font-weight:700}.question label{display:block;padding:7px 10px;border-radius:8px;cursor:pointer}.question label:hover{background:#f4f7fc}.question input{margin-right:8px}.feedback{margin-top:8px;font-weight:700}.correct{color:var(--green)}.incorrect{color:var(--red)}.muted{color:var(--muted)}.progress{height:8px;background:#e4eaf4;border-radius:99px;overflow:hidden;margin:12px 0}.progress div{height:100%;background:var(--blue);width:0%;transition:width .2s}footer{text-align:center;color:var(--muted);padding:20px}
+@media(max-width:850px){.layout{grid-template-columns:1fr;padding:12px}nav{position:relative;top:0;max-height:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}.navlabel{grid-column:1/-1}.grid{grid-template-columns:1fr}header{padding:22px 18px}}
+@media print{header{background:#fff;color:#000;padding:10px}header p{color:#333}.layout{display:block;padding:0}nav,.actions,button{display:none!important}.page{display:block!important}.card{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><h1>Discrete Structures 1</h1><p>Exam reviewer • Lessons 7–9 • Simple explanations, examples, and practice questions</p></header>
+<div class="layout">
+<nav aria-label="Reviewer navigation">
+<div class="navlabel">Start here</div>
+<button class="active" data-page="home">🏠 Overview</button>
+<div class="navlabel">Lesson 7 • Weeks 13–14</div>
+<button data-page="trees">🌳 Binary Trees</button>
+<button data-page="traversal">🔁 Tree Traversals</button>
+<div class="navlabel">Lesson 8 • Week 15</div>
+<button data-page="fsm">⚙️ Finite State Machines</button>
+<button data-page="regular">🔤 Regular Languages</button>
+<div class="navlabel">Lesson 9 • Weeks 16–17</div>
+<button data-page="numbers">🔢 Number Systems</button>
+<button data-page="conversions">🧮 Conversions & Arithmetic</button>
+<div class="navlabel">Exam practice</div>
+<button data-page="quiz">📝 Multiple-choice quiz</button>
+<button data-page="answers">✅ Answer key & quick review</button>
+</nav>
+<main>
+<section class="page active" id="home">
+<div class="card"><span class="tag">HOW TO USE THIS REVIEWER</span><h2>Study one topic at a time</h2><p class="lead">Choose a lesson from the menu. Read the short explanation, study the examples, then answer the practice quiz. This reviewer is based on your uploaded Lesson 7, 8, and 9 slides, with worked examples added to help you practise.</p>
+<div class="grid">
+<div class="mini"><strong>Lesson 7 — Binary Trees</strong>Nodes, root, parent/child, leaves, levels, and the three traversal patterns.</div>
+<div class="mini"><strong>Lesson 8 — Finite State Machines</strong>States, inputs, transitions, accept states, and regular languages.</div>
+<div class="mini"><strong>Lesson 9 — Integer Representations</strong>Decimal, binary, hexadecimal, octal, conversions, binary addition, and 2’s complement.</div>
+<div class="mini"><strong>Exam practice</strong>20 multiple-choice questions with instant feedback and a score.</div>
+</div>
+<div class="callout"><strong>Study tip:</strong> Memorize the traversal patterns and number-system bases, but practise the conversion steps instead of only memorizing answers.</div></div>
+<div class="card"><h2>Learning checklist</h2>
+<p>Before your exam, check that you can:</p>
+<ul><li>Identify the root, parent, child, leaf, subtree, path, and level of a tree.</li><li>Write in-order, pre-order, and post-order traversal sequences.</li><li>Explain a finite state machine and follow transitions for given inputs.</li><li>Recognize strings accepted by a simple FSM.</li><li>Convert decimal and binary values, group binary digits for hexadecimal, and use 2’s complement for subtraction.</li></ul></div>
+</section>
+
+<section class="page" id="trees">
+<div class="card"><span class="tag">LESSON 7 • WEEKS 13–14</span><h2>Binary Trees: the basic idea</h2><p>A <strong>tree</strong> is a non-linear data structure made of nodes connected by edges. Unlike an array or linked list, its data branches instead of forming one simple line.</p><p>A <strong>binary tree</strong> is a tree where each node can have at most two children: a <strong>left child</strong> and a <strong>right child</strong>. A node may have zero, one, or two children.</p>
+<div class="tree">        8        ← root
+       / \\
+      3   10
+     / \\    \\
+    1   6    14
+       / \\   /
+      4   7 13</div>
+<h3>Important terms (easy definitions)</h3><table><tr><th>Term</th><th>Meaning</th><th>Example in diagram</th></tr>
+<tr><td>Root</td><td>The top node; there is one root in a non-empty tree.</td><td>8</td></tr><tr><td>Parent</td><td>A node directly above another node.</td><td>3 is parent of 1 and 6.</td></tr><tr><td>Child</td><td>A node directly below another node.</td><td>10 is a child of 8.</td></tr><tr><td>Leaf</td><td>A node with no children.</td><td>1, 4, 7, 13</td></tr><tr><td>Subtree</td><td>A node together with its descendants.</td><td>The branch starting at 3.</td></tr><tr><td>Path</td><td>A sequence of nodes connected by edges.</td><td>8 → 3 → 6 → 7</td></tr><tr><td>Level</td><td>Generation of a node; root is level 0 in the slides.</td><td>8 level 0; 3 and 10 level 1.</td></tr><tr><td>Key</td><td>A node value used to search for that node.</td><td>Searching for key 14.</td></tr><tr><td>Visiting / Traversing</td><td>Visiting checks a node's value; traversing follows a particular order.</td><td>Reading every node in a chosen order.</td></tr></table>
+<div class="callout"><strong>Remember:</strong> “At most two children” means a node can have 0, 1, or 2 children—not three.</div></div>
+</section>
+
+<section class="page" id="traversal">
+<div class="card"><span class="tag">LESSON 7 • TREE TRAVERSAL</span><h2>Three traversal patterns</h2><p><strong>Traversal</strong> means visiting the nodes in a particular order. For the example below, use this tree:</p>
+<div class="tree">        A
+       / \\
+      B   C
+     / \\ / \\
+    D  E F  G</div>
+<table><tr><th>Traversal</th><th>Pattern</th><th>Output</th><th>Memory trick</th></tr>
+<tr><td><strong>In-order</strong></td><td>Left → Root → Right</td><td>D, B, E, A, F, C, G</td><td>Root is in the middle.</td></tr>
+<tr><td><strong>Pre-order</strong></td><td>Root → Left → Right</td><td>A, B, D, E, C, F, G</td><td>Root comes first.</td></tr>
+<tr><td><strong>Post-order</strong></td><td>Left → Right → Root</td><td>D, E, B, F, G, C, A</td><td>Root comes last.</td></tr></table>
+<h3>How to solve a traversal question</h3><ol><li>Start at the root, but do not automatically write it down.</li><li>Follow the chosen pattern at every subtree, not just at the whole tree.</li><li>Write each node only when its position in the pattern says to visit it.</li></ol>
+<div class="callout warning"><strong>Common mistake:</strong> Pre-order and post-order both visit the left subtree before the right subtree. The difference is where the root is written.</div>
+<h3>Quick check</h3><p>For the tree above, which traversal begins with A and ends with G?</p><button class="primary" onclick="reveal('travHint')">Show answer</button><p id="travHint" hidden><strong>Pre-order:</strong> A, B, D, E, C, F, G. It starts with the root and then visits left before right.</p></div>
+</section>
+
+<section class="page" id="fsm">
+<div class="card"><span class="tag">LESSON 8 • WEEK 15</span><h2>Finite State Machines (FSM)</h2><p>A <strong>finite state machine</strong> is an abstract machine that can be in exactly one state from a finite set of states at a time. It can change state when it receives an input.</p>
+<div class="grid"><div class="mini"><strong>State</strong>A condition the machine is currently in.</div><div class="mini"><strong>Input</strong>An event or value the machine receives.</div><div class="mini"><strong>Transition</strong>The move from one state to another because of an input.</div><div class="mini"><strong>Accept state</strong>A state that represents an accepted/finished condition; often drawn with a double circle.</div></div>
+<h3>State transition diagram symbols</h3><ul><li><strong>Circle:</strong> a state, often labelled q0, q1, q2, etc.</li><li><strong>Arrow into a state:</strong> may indicate the starting state.</li><li><strong>Arrow between states:</strong> a transition; its label tells which input causes the move.</li><li><strong>Double circle:</strong> an accept state in the heat-wave example.</li></ul>
+<h3>Example: heat-wave determination</h3><p>Rule from the slides: a heat wave occurs when the temperature is <strong>45°C or more for 2 consecutive days</strong>.</p>
+<table><tr><th>State</th><th>Meaning</th><th>What happens next?</th></tr><tr><td>q0</td><td>No qualifying consecutive hot day counted yet.</td><td>If temperature is at least 45°C, move to q1. If below 45°C, stay/reset to q0.</td></tr><tr><td>q1</td><td>One day at 45°C or more has occurred.</td><td>If the next day is also at least 45°C, move to q2. If below 45°C, reset to q0.</td></tr><tr><td>q2</td><td>Heat wave has occurred (accept state).</td><td>Remain in q2 after the event has occurred, as described in the slides.</td></tr></table>
+<div class="callout"><strong>Example sequence:</strong> 46°C, 45°C → q0 → q1 → q2, so the heat-wave condition is met. But 46°C, 40°C resets the count, because the days are not consecutive.</div>
+<h3>Applications mentioned in the slides</h3><p>Digital logic design, control systems, natural language processing, and computer networking. The slides also show examples involving a coin-operated turnstile and video game control.</p></div>
+</section>
+
+<section class="page" id="regular">
+<div class="card"><span class="tag">LESSON 8 • REGULAR LANGUAGES</span><h2>Regular language</h2><p>A <strong>regular language</strong> is a language that can be expressed using a finite state machine.</p><h3>Examples from the lesson</h3><div class="mini"><strong>Strings that end with 0</strong><p>The lesson describes strings with zero or more 1s at the start that end in 0. Examples shown: <code>0</code>, <code>10</code>, <code>1111110</code>.</p></div><div class="mini" style="margin-top:12px"><strong>Strings that end with 1</strong><p>Examples shown in the slides: <code>1</code>, <code>01</code>, <code>011</code>, <code>001</code>, <code>0001111</code>, <code>01111</code>.</p></div>
+<h3>Exam approach</h3><ol><li>Read the rule carefully: does the string need to start with a symbol or end with one?</li><li>Check the last symbol if the rule says “ends with”.</li><li>Follow the arrows one input symbol at a time if a state diagram is provided.</li><li>At the end, check whether the machine is in an accept state.</li></ol>
+<div class="callout warning"><strong>Watch out:</strong> A string that ends in 0 does not satisfy a rule requiring it to end in 1, and vice versa.</div></div>
+</section>
+
+<section class="page" id="numbers">
+<div class="card"><span class="tag">LESSON 9 • WEEKS 16–17</span><h2>Integer representations / number systems</h2><p>A number system represents values using a base. The position of each digit determines its place value.</p>
+<table><tr><th>System</th><th>Base</th><th>Allowed symbols</th><th>Quick note</th></tr><tr><td>Decimal</td><td>10</td><td>0–9</td><td>Everyday counting system.</td></tr><tr><td>Binary</td><td>2</td><td>0, 1</td><td>Computers commonly use it; each digit is a bit.</td></tr><tr><td>Octal</td><td>8</td><td>0–7</td><td>Base 8.</td></tr><tr><td>Hexadecimal</td><td>16</td><td>0–9, A–F</td><td>A=10, B=11, C=12, D=13, E=14, F=15.</td></tr></table>
+<h3>Place value example: decimal 735</h3><p><code>735 = 7 × 10² + 3 × 10¹ + 5 × 10⁰</code></p><p>That is <code>700 + 30 + 5</code>. The rightmost digit is the 10⁰ (ones) place, the next is 10¹ (tens), then 10² (hundreds).</p>
+<h3>Binary place values</h3><p>From right to left, the place values are 1, 2, 4, 8, 16, 32, ... (powers of 2).</p><div class="callout"><strong>Example:</strong> <code>1010₂ = 1×8 + 0×4 + 1×2 + 0×1 = 10₁₀</code>.</div>
+<h3>Where hexadecimal is used</h3><p>The slides mention memory locations, web-page colors, MAC addresses, and error messages.</p></div>
+</section>
+
+<section class="page" id="conversions">
+<div class="card"><span class="tag">LESSON 9 • WORKED EXAMPLES</span><h2>Conversions and binary arithmetic</h2>
+<h3>1. Decimal to binary: divide by 2</h3><p>Example: convert decimal 13 to binary. Divide by 2 repeatedly and record each remainder; read remainders from bottom to top.</p><table><tr><th>Division</th><th>Remainder</th></tr><tr><td>13 ÷ 2 = 6</td><td>1</td></tr><tr><td>6 ÷ 2 = 3</td><td>0</td></tr><tr><td>3 ÷ 2 = 1</td><td>1</td></tr><tr><td>1 ÷ 2 = 0</td><td>1</td></tr></table><p><strong>Answer: <code>13₁₀ = 1101₂</code></strong></p>
+<h3>2. Binary to decimal: multiply by place values</h3><p>Example: <code>1101₂ = 1×8 + 1×4 + 0×2 + 1×1 = 13₁₀</code>.</p>
+<h3>3. Binary ↔ hexadecimal</h3><p>For binary to hexadecimal, group bits into sets of four from the right, adding leading zeros if needed. Convert each group to one hex digit.</p><div class="callout"><strong>Example:</strong> <code>1101₂</code> is one group of four; 1101₂ = 13₁₀ = <strong>D₁₆</strong>. For hexadecimal to binary, replace each hex digit with its 4-bit equivalent.</div>
+<h3>4. Binary addition rules</h3><table><tr><th>Operation</th><th>Result</th></tr><tr><td>0 + 0</td><td>0</td></tr><tr><td>0 + 1 or 1 + 0</td><td>1</td></tr><tr><td>1 + 1</td><td>10 (write 0, carry 1)</td></tr><tr><td>1 + 1 + carry 1</td><td>11 (write 1, carry 1)</td></tr></table>
+<p>Example: <code>101₂ + 011₂ = 1000₂</code> (5 + 3 = 8).</p>
+<h3>5. One’s and two’s complement</h3><ol><li><strong>One’s complement:</strong> flip every bit (0 becomes 1; 1 becomes 0).</li><li><strong>Two’s complement:</strong> take the one’s complement, then add 1.</li></ol><p>Example using 5 bits: <code>10010</code> → one’s complement <code>01101</code> → add 1 = <code>01110</code>.</p>
+<h3>6. Subtraction using two’s complement</h3><p>For a subtraction with fixed-width binary values, take the two’s complement of the number being subtracted, add it to the first number, then follow the lesson’s rule for the result.</p><div class="callout warning"><strong>From the slides:</strong> When subtracting a smaller number from a larger number, omit the final carry. When the result is negative (larger number subtracted from smaller number), the result is in two’s-complement form; take its two’s complement to find the magnitude and change the sign. Use the same bit width throughout.</div>
+<h3>Useful conversion reminders</h3><ul><li>Decimal → binary: divide by 2; read remainders upward.</li><li>Binary → decimal: add the powers of 2 where the bit is 1.</li><li>Binary → hex: group into 4 bits from the right.</li><li>Hex → binary: each hex digit maps to 4 bits.</li><li>Two’s complement = flip bits + 1.</li></ul></div>
+</section>
+
+<section class="page" id="quiz">
+<div class="card"><span class="tag">EXAM PREPARATION</span><h2>20-question multiple-choice quiz</h2><p>Choose one answer for each question, then click <strong>Check answers</strong>. Explanations appear after checking. Try answering without looking at the answer key first.</p><div class="progress"><div id="progressBar"></div></div><p class="muted" id="answeredCount">0 of 20 answered</p><form id="quizForm"></form><div class="actions"><button type="button" class="primary" onclick="checkQuiz()">Check answers</button><button type="button" class="primary secondary" onclick="resetQuiz()">Try again</button></div><h3 id="score" aria-live="polite"></h3></div>
+</section>
+
+<section class="page" id="answers">
+<div class="card"><span class="tag">LAST-MINUTE REVIEW</span><h2>Answer key & memory shortcuts</h2><h3>Patterns to memorize</h3><ul><li><strong>In-order:</strong> Left, Root, Right.</li><li><strong>Pre-order:</strong> Root, Left, Right.</li><li><strong>Post-order:</strong> Left, Right, Root.</li><li><strong>Binary tree:</strong> at most two children per node.</li><li><strong>FSM:</strong> state + input can cause a transition.</li><li><strong>Regular language:</strong> can be expressed by an FSM.</li><li><strong>Binary:</strong> base 2; <strong>decimal:</strong> base 10; <strong>octal:</strong> base 8; <strong>hexadecimal:</strong> base 16.</li><li><strong>Two’s complement:</strong> flip bits, then add 1.</li></ul><h3>Quiz answer key</h3><p>Complete the quiz and click “Check answers” to see your score and explanations. The key below is hidden until you choose to reveal it.</p><button class="primary" onclick="document.getElementById('keyContent').hidden=false">Reveal answer key</button><div id="keyContent" hidden><ol id="keyList"></ol></div><div class="callout"><strong>Exam tip:</strong> For computation questions, show your steps. For concept questions, identify the key phrase in the question (for example, “root first” means pre-order).</div></div>
+</section>
+</main></div><footer>Made for studying • Discrete Structures 1 • Lessons 7–9</footer>
+<script>
+const pages=[...document.querySelectorAll('.page')], navButtons=[...document.querySelectorAll('nav button[data-page]')];
+function showPage(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));navButtons.forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'});}
+navButtons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+const qs=[
+{q:"A tree is best described as which type of data structure?",a:["Linear","Non-linear","Only sequential","A number system"],c:1,e:"A tree branches through nodes and edges, so it is non-linear."},
+{q:"What is the top node of a tree called?",a:["Leaf","Child","Root","Key"],c:2,e:"The root is the top node of a non-empty tree."},
+{q:"A node with no children is called a…",a:["Parent","Leaf","Root only","Path"],c:1,e:"A leaf node has no children."},
+{q:"In a binary tree, a node can have at most how many children?",a:["1","2","3","4"],c:1,e:"It can have zero, one, or two children."},
+{q:"Which traversal follows Left → Root → Right?",a:["Pre-order","Post-order","In-order","Level-order"],c:2,e:"In-order is Left, Root, Right."},
+{q:"Which traversal visits the root first?",a:["Pre-order","In-order","Post-order","None"],c:0,e:"Pre-order starts with Root, then Left, then Right."},
+{q:"Which traversal visits the root last?",a:["Pre-order","In-order","Post-order","All of them"],c:2,e:"Post-order is Left, Right, Root."},
+{q:"What does traversal mean?",a:["Deleting every node","Visiting nodes in a particular order","Adding a new root only","Sorting all arrays"],c:1,e:"Traversal means passing through nodes in a specific order."},
+{q:"An FSM can be in how many states at a given time, according to the lesson?",a:["Exactly one","Exactly two","All states","No states"],c:0,e:"An FSM is in exactly one of its finite states at any given time."},
+{q:"In an FSM, a change from one state to another is called a…",a:["Key","Level","Transition","Subtree"],c:2,e:"A transition is the move between states in response to input."},
+{q:"Which symbol commonly represents an accept state in the lesson?",a:["Square","Double circle","Triangle","Dashed line"],c:1,e:"The heat-wave example uses a circle inside a circle for the accept state."},
+{q:"In the heat-wave example, what condition must occur?",a:["40°C for 1 day","45°C or more for 2 consecutive days","45°C on any one day","Below 45°C for 2 days"],c:1,e:"The slide defines a heat wave as 45°C or more for two consecutive days."},
+{q:"A regular language is a language that can be expressed using a…",a:["Binary tree only","Finite state machine","Decimal system","Linked list only"],c:1,e:"That is the definition given in Lesson 8."},
+{q:"Which number system uses only 0 and 1?",a:["Decimal","Octal","Binary","Hexadecimal"],c:2,e:"Binary is base 2 and uses 0 and 1."},
+{q:"What is the base of decimal?",a:["2","8","10","16"],c:2,e:"Decimal uses digits 0–9 and has base 10."},
+{q:"Which symbols are used in hexadecimal?",a:["0–1 only","0–7 only","0–9 and A–F","A–Z"],c:2,e:"Hexadecimal uses 0–9 and A, B, C, D, E, F."},
+{q:"What is 1010₂ in decimal?",a:["8","10","12","14"],c:1,e:"8 + 0 + 2 + 0 = 10."},
+{q:"What is decimal 13 in binary?",a:["1011","1101","1110","1001"],c:1,e:"13 divided repeatedly by 2 gives remainders 1, 0, 1, 1 from bottom to top: 1101."},
+{q:"How do you find the two’s complement of a binary number?",a:["Add 2 only","Reverse the digits' order","Flip every bit, then add 1","Remove all zeros"],c:2,e:"First find the one’s complement by flipping bits, then add 1."},
+{q:"When converting binary to hexadecimal, how should you group bits?",a:["Groups of 2 from left","Groups of 3 from right","Groups of 4 from right","Groups of 8 from left"],c:2,e:"Group into sets of four starting at the right; add leading zeros if needed."}
+];
+const form=document.getElementById('quizForm');
+function renderQuiz(){form.innerHTML='';qs.forEach((x,i)=>{const d=document.createElement('div');d.className='question';d.id='qbox'+i;const p=document.createElement('p');p.textContent=(i+1)+'. '+x.q;d.appendChild(p);x.a.forEach((a,j)=>{const l=document.createElement('label');const inp=document.createElement('input');inp.type='radio';inp.name='q'+i;inp.value=j;inp.addEventListener('change',updateProgress);l.appendChild(inp);l.append(' '+a);d.appendChild(l)});const f=document.createElement('div');f.className='feedback';f.id='fb'+i;d.appendChild(f);form.appendChild(d)});document.getElementById('keyList').innerHTML=qs.map(x=>'<li>'+x.a[x.c]+' — '+x.e+'</li>').join('');updateProgress()}
+function updateProgress(){let n=qs.filter((q,i)=>form.querySelector('input[name="q'+i+'"]:checked')).length;document.getElementById('answeredCount').textContent=n+' of '+qs.length+' answered';document.getElementById('progressBar').style.width=(n/qs.length*100)+'%'}
+function checkQuiz(){let score=0;qs.forEach((x,i)=>{const chosen=form.querySelector('input[name="q'+i+'"]:checked');const fb=document.getElementById('fb'+i);if(chosen&&Number(chosen.value)===x.c){score++;fb.className='feedback correct';fb.textContent='Correct! '+x.e}else{fb.className='feedback incorrect';fb.textContent='Correct answer: '+x.a[x.c]+'. '+x.e}});document.getElementById('score').textContent='Your score: '+score+'/'+qs.length+' ('+Math.round(score/qs.length*100)+'%)';}
+function resetQuiz(){form.reset();qs.forEach((x,i)=>{const f=document.getElementById('fb'+i);f.textContent='';f.className='feedback'});document.getElementById('score').textContent='';updateProgress();window.scrollTo({top:0,behavior:'smooth'})}
+renderQuiz();
+</script>
+</body></html>
